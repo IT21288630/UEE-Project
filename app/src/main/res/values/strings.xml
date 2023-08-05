@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UEE</string>
+    <string name="login">Login</string>
+    <string name="patient">Patient</string>
+    <string name="caregiver">Caregiver</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
 </resources>
