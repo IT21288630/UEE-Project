@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/profile"
+        android:contentDescription="@string/profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/orders"
+        android:contentDescription="@string/orders"
+        android:enabled="true"
+        android:title="@string/orders" />
+
+    <item
+        android:id="@+id/chats"
+        android:contentDescription="@string/chats"
+        android:enabled="true"
+        android:icon="@drawable/ic_message_white"
+        android:title="@string/chats" />
+
+    <item
+        android:id="@+id/settings"
+        android:contentDescription="@string/settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
+</menu>

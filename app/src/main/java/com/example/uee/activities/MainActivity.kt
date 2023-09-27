@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
+        /*val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
         val editor = sharedPref.edit()
 
         val btnCareGiver: Button = findViewById(R.id.btnCaregiver)
@@ -34,6 +34,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
 
+            finish()
+        }*/
+        val btnCareGiver: Button = findViewById(R.id.btnCaregiver)
+
+        btnCareGiver.setOnClickListener{
+            val intent = Intent(this, CaregiverActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
