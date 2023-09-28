@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.uee.R
 import com.example.uee.activities.ChatActivity
 import com.example.uee.dataClasses.ChatUser
 import com.example.uee.databinding.FragmentChannelListBinding
@@ -24,8 +25,8 @@ import io.getstream.chat.android.ui.channel.list.viewmodel.factory.ChannelListVi
 class ChannelListFragment : Fragment() {
 
     private val client = ChatClient.instance()
-    lateinit var chatUser: ChatUser
-    lateinit var binding: FragmentChannelListBinding
+    private lateinit var chatUser: ChatUser
+    private lateinit var binding: FragmentChannelListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +91,11 @@ class ChannelListFragment : Fragment() {
             val intent = Intent(requireContext(), ChatActivity::class.java)
             intent.putExtra("cid", channel.cid)
             startActivity(intent)
+            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        }
+
+        binding.toolbar.setNavigationOnClickListener {
+            activity?.supportFragmentManager?.popBackStack()
         }
     }
 }

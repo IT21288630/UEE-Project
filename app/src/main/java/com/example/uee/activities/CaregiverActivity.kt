@@ -20,12 +20,12 @@ class CaregiverActivity : AppCompatActivity() {
         binding = ActivityCaregiverBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setCurrentFragment(CaregiverProfileFragment())
+        setCaregiverProfileFragment()
 
         binding.bottomAppBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.profile -> {
-                    setCurrentFragment(CaregiverProfileFragment())
+                    setCaregiverProfileFragment()
                     true
                 }
 
@@ -50,6 +50,16 @@ class CaregiverActivity : AppCompatActivity() {
         args.putParcelable("chatUser", ChatUser("ila2", "null"))
         fragment.arguments = args
 
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit()
+    }
+
+    private fun setCaregiverProfileFragment() {
+
+        val caregiverProfileFragment = CaregiverProfileFragment()
+        val args = Bundle()
+        args.putParcelable("chatUser", ChatUser("ila2", "null"))
+        caregiverProfileFragment.arguments = args
+
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, CaregiverProfileFragment()).commit()
     }
 }
