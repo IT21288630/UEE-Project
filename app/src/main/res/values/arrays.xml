@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="districts" >
+        <item>Colombo</item>
+        <item>Gampaha</item>
+        <item>Kalutara</item>
+        <item>Kandy</item>
+        <item>Matale</item>
+        <item>Nuwara Eliya</item>
+        <item>Galle</item>
+        <item>Matara</item>
+        <item>Hambantota</item>
+        <item>Jaffna</item>
+        <item>Kilinochchi</item>
+        <item>Mannar</item>
+        <item>Vavuniya</item>
+        <item>Mullaitivu</item>
+        <item>Batticaloa</item>
+        <item>Ampara</item>
+        <item>Trincomalee</item>
+        <item>Kurunegala</item>
+        <item>Puttalam</item>
+        <item>Anuradhapura</item>
+        <item>Polonnaruwa</item>
+        <item>Badulla</item>
+        <item>Monaragala</item>
+        <item>Ratnapura</item>
+        <item>Kegalle</item>
+    </string-array>
+</resources>
