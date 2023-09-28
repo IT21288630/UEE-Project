@@ -32,4 +32,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="api_key">fyygefcr4ng4</string>
+    <string name="next">Next</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="hourly_rate">Hourly rate</string>
+    <string name="short_notice_hourly_rate">Short notice hourly rate</string>
+    <string name="sleeping">Sleeping</string>
+    <string name="waking">Waking</string>
+    <string name="live_in">Live-In</string>
+    <string name="part_time">Part time</string>
+    <string name="full_time">Full time</string>
+    <string name="done">Done</string>
 </resources>

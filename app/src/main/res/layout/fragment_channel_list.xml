@@ -16,16 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIcon="@drawable/ic_arrow_back_small"
             app:title="@string/chats">
 
             <io.getstream.chat.android.ui.avatar.AvatarView
                 android:id="@+id/avatarView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
                 android:layout_marginEnd="10dp"
-                app:streamUiAvatarBorderWidth="0dp"
-                android:layout_gravity="end" />
+                app:streamUiAvatarBorderWidth="0dp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -34,6 +34,5 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-
 
 </FrameLayout>

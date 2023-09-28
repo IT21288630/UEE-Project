@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.addCallback
 import androidx.activity.viewModels
+import com.example.uee.R
 import com.example.uee.databinding.ActivityChatBinding
 import com.getstream.sdk.chat.viewmodel.MessageInputViewModel
 import com.getstream.sdk.chat.viewmodel.messages.MessageListViewModel
@@ -73,5 +74,11 @@ class ChatActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this) {
             backHandler()
         }
+    }
+
+    override fun finish() {
+        super.finish()
+
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 }
