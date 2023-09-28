@@ -2,13 +2,13 @@ package com.example.uee.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.uee.CaregiverSettingsFragment
+import com.example.uee.fragments.CaregiverSettingsFragment
 import com.example.uee.R
+import com.example.uee.dataClasses.ChatUser
 import com.example.uee.databinding.ActivityCaregiverBinding
-import com.example.uee.databinding.FragmentCaregiverProfileBinding
 import com.example.uee.fragments.CaregiverProfileFragment
+import com.example.uee.fragments.ChannelListFragment
 
 class CaregiverActivity : AppCompatActivity() {
 
@@ -34,15 +34,22 @@ class CaregiverActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.chats -> {
+                    setCurrentFragment(ChannelListFragment())
+                    true
+                }
+
                 else -> false
             }
         }
     }
 
     private fun setCurrentFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.frame_layout, fragment)
-            .commit()
+
+        val args = Bundle()
+        args.putParcelable("chatUser", ChatUser("ila2", "null"))
+        fragment.arguments = args
+
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).commit()
     }
 }

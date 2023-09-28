@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".CaregiverSettingsFragment">
+    tools:context=".fragments.CaregiverSettingsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -71,15 +71,15 @@
                 android:hint="@string/location"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                app:startIconDrawable="@drawable/ic_search"
                 app:endIconDrawable="@drawable/ic_cancel"
                 app:endIconMode="clear_text"
-                app:errorEnabled="true">
+                app:errorEnabled="true"
+                app:startIconDrawable="@drawable/ic_search">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:simpleItems="@array/districts"/>
+                    app:simpleItems="@array/districts" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,9 +111,9 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:boxStrokeWidth="0dp"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
+                        app:boxStrokeWidth="0dp"
                         app:endIconDrawable="@drawable/ic_cancel"
                         app:endIconMode="clear_text"
                         app:errorEnabled="true">
@@ -121,14 +121,14 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="top"
                             android:inputType="textMultiLine|textLongMessage"
                             android:lines="6"
-                            android:text="@string/about_desc"
-                            android:gravity="top"
-                            android:scrollbars="vertical"
                             android:overScrollMode="always"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
                             android:scrollHorizontally="false"
-                            android:scrollbarStyle="insideInset"/>
+                            android:text="@string/about_desc" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,18 +175,18 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:boxStrokeWidth="0dp"
                         android:hint="@string/rs2000perhour"
-                        app:prefixText="@string/rs"
-                        app:suffixText="@string/per_hour"
+                        app:boxStrokeWidth="0dp"
                         app:endIconDrawable="@drawable/ic_cancel"
                         app:endIconMode="clear_text"
-                        app:errorEnabled="true">
+                        app:errorEnabled="true"
+                        app:prefixText="@string/rs"
+                        app:suffixText="@string/per_hour">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"/>
+                            android:inputType="number" />
 
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
@@ -233,18 +233,18 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:boxStrokeWidth="0dp"
                         android:hint="@string/rs2000perhour"
-                        app:prefixText="@string/rs"
-                        app:suffixText="@string/per_hour"
+                        app:boxStrokeWidth="0dp"
                         app:endIconDrawable="@drawable/ic_cancel"
                         app:endIconMode="clear_text"
-                        app:errorEnabled="true">
+                        app:errorEnabled="true"
+                        app:prefixText="@string/rs"
+                        app:suffixText="@string/per_hour">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"/>
+                            android:inputType="number" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -293,18 +293,18 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:boxStrokeWidth="0dp"
                         android:hint="@string/rs2000perhour"
-                        app:prefixText="@string/rs"
-                        app:suffixText="@string/per_hour"
+                        app:boxStrokeWidth="0dp"
                         app:endIconDrawable="@drawable/ic_cancel"
                         app:endIconMode="clear_text"
-                        app:errorEnabled="true">
+                        app:errorEnabled="true"
+                        app:prefixText="@string/rs"
+                        app:suffixText="@string/per_hour">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"/>
+                            android:inputType="number" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -353,18 +353,18 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:boxStrokeWidth="0dp"
                         android:hint="@string/rs2000perhour"
-                        app:prefixText="@string/rs"
-                        app:suffixText="@string/per_hour"
+                        app:boxStrokeWidth="0dp"
                         app:endIconDrawable="@drawable/ic_cancel"
                         app:endIconMode="clear_text"
-                        app:errorEnabled="true">
+                        app:errorEnabled="true"
+                        app:prefixText="@string/rs"
+                        app:suffixText="@string/per_hour">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"/>
+                            android:inputType="number" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 

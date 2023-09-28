@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools"  tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">UEE</string>
     <string name="login">Login</string>
     <string name="patient">Patient</string>
@@ -29,4 +29,7 @@
     <string name="location">Location</string>
     <string name="rs">Rs</string>
     <string name="rs2000perhour">Rs2000 per hour</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="api_key">fyygefcr4ng4</string>
 </resources>

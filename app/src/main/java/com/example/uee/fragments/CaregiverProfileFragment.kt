@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.uee.dataClasses.ChatUser
 import com.example.uee.databinding.FragmentCaregiverProfileBinding
 import com.google.android.material.transition.platform.MaterialFadeThrough
 
@@ -30,5 +32,6 @@ class CaregiverProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
     }
 }
