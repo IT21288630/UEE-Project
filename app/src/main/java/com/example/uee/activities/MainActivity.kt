@@ -37,9 +37,16 @@ class MainActivity : AppCompatActivity() {
             finish()
         }*/
         val btnCareGiver: Button = findViewById(R.id.btnCaregiver)
+        val btnClient:Button = findViewById(R.id.btnClient)
 
         btnCareGiver.setOnClickListener{
             val intent = Intent(this, CaregiverRegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btnClient.setOnClickListener(){
+            val intent = Intent(this, InitialLoadingActivity::class.java)
             startActivity(intent)
             finish()
         }
