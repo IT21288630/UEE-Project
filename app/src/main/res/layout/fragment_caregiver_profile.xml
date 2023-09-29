@@ -24,10 +24,10 @@
                     android:id="@+id/avatarView"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    app:streamUiAvatarBorderWidth="0dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    app:streamUiAvatarOnlineIndicatorEnabled="true"/>
+                    app:streamUiAvatarBorderWidth="0dp"
+                    app:streamUiAvatarOnlineIndicatorEnabled="true" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -43,7 +43,7 @@
                             android:id="@+id/tvName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bog"
+                            android:background="@drawable/rounded_corner"
                             android:textColor="@color/black"
                             android:textSize="30sp" />
 
@@ -52,8 +52,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            app:icon="@drawable/ic_message_black"
-                            android:contentDescription="@string/message"/>
+                            android:contentDescription="@string/message"
+                            app:icon="@drawable/ic_message_black" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -130,7 +130,7 @@
                                     android:id="@+id/tvAge"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/age_32" />
+                                    android:background="@drawable/rounded_corner_small" />
 
                             </LinearLayout>
 
@@ -150,7 +150,7 @@
                                     android:id="@+id/tvLocation"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/colombo" />
+                                    android:background="@drawable/rounded_corner" />
 
                             </LinearLayout>
 
@@ -169,7 +169,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/_5_years_experience" />
+                                    android:background="@drawable/rounded_corner_large" />
 
                             </LinearLayout>
 
@@ -184,10 +184,10 @@
                                 style="@style/Widget.Material3.Button.IconButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
                                 android:layout_alignParentEnd="true"
-                                app:icon="@drawable/ic_work"
-                                android:contentDescription="@string/request"/>
+                                android:layout_alignParentBottom="true"
+                                android:contentDescription="@string/request"
+                                app:icon="@drawable/ic_work" />
 
                         </RelativeLayout>
 
@@ -226,8 +226,30 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner_large"
                         android:lineSpacingExtra="4sp"
-                        android:text="@string/about_desc"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvDummy1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner_large"
+                        android:lineSpacingExtra="4sp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvDummy2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner"
+                        android:lineSpacingExtra="4sp"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 
@@ -258,8 +280,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginBottom="20dp"
                             android:text="@string/hourly"
                             android:textColor="@color/black"
@@ -323,8 +345,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginBottom="20dp"
                             android:text="@string/short_notice"
                             android:textColor="@color/black"
@@ -440,8 +462,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/waking"
                             android:textSize="10sp"
@@ -540,8 +562,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/full_time"
                             android:textSize="10sp"

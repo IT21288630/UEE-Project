@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import com.example.uee.dataClasses.Caregiver
 import com.example.uee.databinding.FragmentCaregiverProfileBinding
@@ -96,6 +97,20 @@ class CaregiverProfileFragment : Fragment() {
     }
 
     private fun setCaregiver() {
+        tvName.background = null
+        tvAge.background = null
+        tvLocation.background = null
+        tvAbout.background = null
+        tvHourlyRate.background = null
+        tvShortNotice.background = null
+        tvSleeping.background = null
+        tvWaking.background = null
+        tvPartTime.background = null
+        tvFullTime.background = null
+
+        binding.tvDummy1.isGone = true
+        binding.tvDummy2.isGone = true
+
         tvName.text = caregiver.name
         tvAge.text = "Age: ${caregiver.age}"
         tvLocation.text = caregiver.location
