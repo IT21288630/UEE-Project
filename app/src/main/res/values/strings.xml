@@ -43,4 +43,10 @@
     <string name="part_time">Part time</string>
     <string name="full_time">Full time</string>
     <string name="done">Done</string>
+    <string name="message">Message</string>
+    <string name="name_">Name :</string>
+    <string name="space_extraLarge">                                                      </string>
+    <string name="space_large">                               </string>
+    <string name="space_medium">                        </string>
+    <string name="space_small">              </string>
 </resources>

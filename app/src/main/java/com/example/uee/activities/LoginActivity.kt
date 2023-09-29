@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.uee.R
-import com.example.uee.dataClasses.CareGiver
+import com.example.uee.dataClasses.Caregiver
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             if (userType.equals("caregiver")){
-                val caregiver = CareGiver(etUName.text.toString(), etPassword.text.toString())
+                val caregiver = Caregiver(etUName.text.toString(), etPassword.text.toString())
 
                 cgLogin(caregiver)
             }
@@ -42,15 +42,15 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun cgLogin(caregiver: CareGiver) = CoroutineScope(Dispatchers.Main).launch {
+    private fun cgLogin(caregiver: Caregiver) = CoroutineScope(Dispatchers.Main).launch {
 
         try {
             val querySnapshot = caregiverCollectionRef.get().await()
 
             for (document in querySnapshot){
-                var temp = document.toObject<CareGiver>()
+                var temp = document.toObject<Caregiver>()
 
-                if (temp.userName == caregiver.userName){
+                if (temp.username == caregiver.username){
 
                     if (temp.password == caregiver.password){
                         withContext(Dispatchers.Main){
