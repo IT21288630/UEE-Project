@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.uee.fragments.CaregiverSettingsFragment
 import com.example.uee.R
+import com.example.uee.dataClasses.Caregiver
 import com.example.uee.dataClasses.ChatUser
 import com.example.uee.databinding.ActivityCaregiverBinding
 import com.example.uee.fragments.CaregiverProfileFragment
@@ -13,12 +14,15 @@ import com.example.uee.fragments.ChannelListFragment
 class CaregiverActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCaregiverBinding
+    private lateinit var caregiver: Caregiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityCaregiverBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        caregiver = intent.getParcelableExtra("caregiver")!!
 
         setCaregiverProfileFragment()
 
@@ -47,7 +51,7 @@ class CaregiverActivity : AppCompatActivity() {
     private fun setCurrentFragment(fragment: Fragment) {
 
         val args = Bundle()
-        args.putParcelable("chatUser", ChatUser("ila2", "null"))
+        args.putString("caregiverUsername", caregiver.username)
         fragment.arguments = args
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit()
@@ -57,9 +61,9 @@ class CaregiverActivity : AppCompatActivity() {
 
         val caregiverProfileFragment = CaregiverProfileFragment()
         val args = Bundle()
-        args.putParcelable("chatUser", ChatUser("ila2", "null"))
+        args.putString("caregiverUsername", caregiver.username)
         caregiverProfileFragment.arguments = args
 
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, CaregiverProfileFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, caregiverProfileFragment).commit()
     }
 }

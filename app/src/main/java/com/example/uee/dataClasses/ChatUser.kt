@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ChatUser(
-    val userName: String,
-    val password: String
+    val username: String?,
+    val name: String?,
+    val image: String?
 ) : Parcelable

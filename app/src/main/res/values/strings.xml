@@ -43,4 +43,6 @@
     <string name="part_time">Part time</string>
     <string name="full_time">Full time</string>
     <string name="done">Done</string>
+    <string name="message">Message</string>
+    <string name="name_">Name :</string>
 </resources>
