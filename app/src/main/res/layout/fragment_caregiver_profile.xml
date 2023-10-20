@@ -21,8 +21,13 @@
                 android:layout_marginTop="50dp">
 
                 <io.getstream.chat.android.ui.avatar.AvatarView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:id="@+id/avatarView"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:streamUiAvatarBorderWidth="0dp"
+                    app:streamUiAvatarOnlineIndicatorEnabled="true" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -35,9 +40,10 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:id="@+id/tvName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bog"
+                            android:background="@drawable/rounded_corner"
                             android:textColor="@color/black"
                             android:textSize="30sp" />
 
@@ -46,6 +52,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/message"
                             app:icon="@drawable/ic_message_black" />
                     </RelativeLayout>
 
@@ -99,52 +106,93 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+                        android:layout_height="83dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/age_32" />
+                            android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/ic_small_circle" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_5_years_experience" />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_small_circle" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/ic_small_circle" />
+                                <TextView
+                                    android:id="@+id/tvAge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/rounded_corner_small" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/colombo" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_small_circle" />
+
+                                <TextView
+                                    android:id="@+id/tvLocation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/rounded_corner" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_small_circle" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/rounded_corner_large" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <Button
+                                style="@style/Widget.Material3.Button.IconButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:contentDescription="@string/request"
+                                app:icon="@drawable/ic_work" />
+
+                        </RelativeLayout>
+
+
                     </LinearLayout>
-
-                    <Button
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="10dp"
-                        android:text="@string/request"
-                        android:textColor="@color/black"
-                        app:cornerRadius="100dp"
-                        app:strokeColor="@color/stream_ui_black" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -173,12 +221,35 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/tvAbout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner_large"
                         android:lineSpacingExtra="4sp"
-                        android:text="@string/about_desc"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvDummy1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner_large"
+                        android:lineSpacingExtra="4sp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvDummy2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner"
+                        android:lineSpacingExtra="4sp"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 
@@ -189,7 +260,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:padding="10dp">
 
                 <com.google.android.material.card.MaterialCardView
@@ -210,7 +280,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="3dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="20dp"
                             android:text="@string/hourly"
@@ -232,6 +302,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/tvHourlyRate"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -274,7 +345,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="5dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="20dp"
                             android:text="@string/short_notice"
@@ -296,6 +367,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/tvShortNotice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -358,7 +430,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
-                            android:text="@string/daily"
+                            android:text="@string/sleeping"
                             android:textSize="10sp"
                             tools:ignore="SmallSp" />
 
@@ -367,6 +439,42 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/tvSleeping"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/rs2000"
+                                android:textColor="@color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/per_hour"
+                                android:textColor="@color/black"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/waking"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tvWaking"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -409,10 +517,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="5dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="20dp"
-                            android:text="@string/short_notice"
+                            android:text="@string/live_in"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             app:drawableStartCompat="@drawable/ic_house" />
@@ -422,7 +530,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
-                            android:text="@string/short_notice_care"
+                            android:text="@string/part_time"
                             android:textSize="10sp"
                             tools:ignore="SmallSp" />
 
@@ -431,6 +539,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/tvPartTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -450,6 +559,40 @@
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/full_time"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tvFullTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/rs2000"
+                                android:textColor="@color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/per_hour"
+                                android:textColor="@color/black"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
 
                     </LinearLayout>
 

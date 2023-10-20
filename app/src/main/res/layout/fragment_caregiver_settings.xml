@@ -25,21 +25,41 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp">
+
+                <io.getstream.chat.android.ui.avatar.AvatarView
+                    android:id="@+id/avatarView"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:streamUiAvatarBorderWidth="0dp" />
+
+                <ImageView
+                    android:id="@+id/ivImageIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_photo_camera" />
+
+            </RelativeLayout>
+
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                android:tag="nameLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:endIconDrawable="@drawable/ic_cancel"
-                app:endIconMode="clear_text"
+                app:helperText="@string/name"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                app:startIconDrawable="@drawable/ic_edit"
+                app:endIconDrawable="@drawable/ic_check_outline"
+                app:endIconMode="custom"
                 app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -49,31 +69,41 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ageLayout"
+                android:tag="ageLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/age"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:endIconDrawable="@drawable/ic_cancel"
-                app:endIconMode="clear_text"
+                app:helperText="@string/age"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                app:startIconDrawable="@drawable/ic_edit"
+                app:endIconDrawable="@drawable/ic_check_outline"
+                app:endIconMode="custom"
                 app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/locationLayout"
+                android:tag="locationLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/location"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:endIconDrawable="@drawable/ic_cancel"
-                app:endIconMode="clear_text"
+                app:helperText="@string/location"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                app:endIconDrawable="@drawable/ic_check_outline"
+                app:endIconMode="custom"
                 app:errorEnabled="true"
                 app:startIconDrawable="@drawable/ic_search">
 
@@ -109,14 +139,16 @@
                         app:drawableStartCompat="@drawable/ic_edit" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/aboutLayout"
+                        android:tag="aboutLayout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
                         app:boxStrokeWidth="0dp"
-                        app:endIconDrawable="@drawable/ic_cancel"
-                        app:endIconMode="clear_text"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -141,7 +173,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#E9F2FF"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
@@ -173,13 +205,15 @@
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/hourlyRateLayout"
+                        android:tag="hourlyRateLayout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/rs2000perhour"
                         app:boxStrokeWidth="0dp"
-                        app:endIconDrawable="@drawable/ic_cancel"
-                        app:endIconMode="clear_text"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
                         app:errorEnabled="true"
                         app:prefixText="@string/rs"
                         app:suffixText="@string/per_hour">
@@ -197,8 +231,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="#E9F2FF"
                 app:cardCornerRadius="12dp"
@@ -231,13 +266,15 @@
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/shortNoticeLayout"
+                        android:tag="shortNoticeLayout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/rs2000perhour"
                         app:boxStrokeWidth="0dp"
-                        app:endIconDrawable="@drawable/ic_cancel"
-                        app:endIconMode="clear_text"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
                         app:errorEnabled="true"
                         app:prefixText="@string/rs"
                         app:suffixText="@string/per_hour">
@@ -257,8 +294,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="#E9F2FF"
                 app:cardCornerRadius="12dp"
@@ -286,18 +323,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="@string/daily"
+                        android:text="@string/sleeping"
                         android:textSize="10sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/sleepingLayout"
+                        android:tag="sleepingLayout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/rs2000perhour"
                         app:boxStrokeWidth="0dp"
-                        app:endIconDrawable="@drawable/ic_cancel"
-                        app:endIconMode="clear_text"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
                         app:errorEnabled="true"
                         app:prefixText="@string/rs"
                         app:suffixText="@string/per_hour">
@@ -309,6 +348,35 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/waking"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/wakingLayout"
+                        android:tag="wakingLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/rs2000perhour"
+                        app:boxStrokeWidth="0dp"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
+                        app:errorEnabled="true"
+                        app:prefixText="@string/rs"
+                        app:suffixText="@string/per_hour">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -317,8 +385,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="#E9F2FF"
                 app:cardCornerRadius="12dp"
@@ -336,7 +404,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/short_notice"
+                        android:text="@string/live_in"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:drawableStartCompat="@drawable/ic_house" />
@@ -346,18 +414,50 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="@string/short_notice_care"
+                        android:text="@string/part_time"
                         android:textSize="10sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/partTimeLayout"
+                        android:tag="partTimeLayout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/rs2000perhour"
                         app:boxStrokeWidth="0dp"
-                        app:endIconDrawable="@drawable/ic_cancel"
-                        app:endIconMode="clear_text"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
+                        app:errorEnabled="true"
+                        app:prefixText="@string/rs"
+                        app:suffixText="@string/per_hour">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/full_time"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fullTimeLayout"
+                        android:tag="fullTimeLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/rs2000perhour"
+                        app:boxStrokeWidth="0dp"
+                        app:endIconDrawable="@drawable/ic_check_outline"
+                        app:endIconMode="custom"
                         app:errorEnabled="true"
                         app:prefixText="@string/rs"
                         app:suffixText="@string/per_hour">
