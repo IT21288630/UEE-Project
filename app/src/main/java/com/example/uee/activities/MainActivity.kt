@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnClient.setOnClickListener(){
-            val intent = Intent(this, InitialLoadingActivity::class.java)
+            val intent = Intent(this, ClientUIActivity::class.java)
             startActivity(intent)
             finish()
         }

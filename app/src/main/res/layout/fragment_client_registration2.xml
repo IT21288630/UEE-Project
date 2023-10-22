@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ClientRegistration2Fragment">
+    tools:context=".fragments.ClientRegistration2Fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
@@ -14,7 +14,7 @@
         android:layout_width="142dp"
         android:layout_height="142dp"
         android:layout_gravity="center_horizontal"
-        android:src="@tools:sample/avatars"
+        android:src="@drawable/uploaddp"
         app:srcCompat="@drawable/uploaddp"
         android:background="@drawable/circle"
         android:scaleType="centerCrop"
