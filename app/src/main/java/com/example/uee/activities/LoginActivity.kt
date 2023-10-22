@@ -27,8 +27,8 @@ class LoginActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
         val userType = sharedPref.getString("userType", null)
 
-        val etUName: EditText = findViewById(R.id.etUName)
-        val etPassword: EditText = findViewById(R.id.etPassword)
+        val etUName: EditText = findViewById(R.id.loginUserNameField)
+        val etPassword: EditText = findViewById(R.id.loginPswField)
         val btnLogin: Button = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
