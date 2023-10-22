@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.ClientSettingsPageFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_arrow_back"
+        android:padding="5dp"
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgViewClientProPic"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+
+            android:layout_marginLeft="20px"
+            android:background="@drawable/circle"
+            android:scaleType="centerCrop"
+            android:src="@drawable/uploaddp"
+            app:srcCompat="@drawable/uploaddp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:id="@+id/txtSettingUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:textSize="34sp"
+            android:text="User Name"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtSettingUserContactNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="14sp"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="10dp"
+        android:text="072 2345678"/>
+
+    <TextView
+        android:id="@+id/txtSettingUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="14sp"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:text="emailExample@test.com"/>
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        android:elevation="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtSettingUserTier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:text="Newbie"/>
+
+            <TextView
+                android:id="@+id/txtViewTier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:textSize="20sp"
+
+                android:text="Tier"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0.5" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="?android:attr/listDivider" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0.5" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtSettingUserTotHires"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:text="5"/>
+
+            <TextView
+                android:id="@+id/txtViewHirings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:textSize="20sp"
+
+                android:text="Total Hirings"/>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        android:elevation="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnYourFavorites"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="Your Favourites"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_fav_black"
+            app:iconGravity="textStart"
+            app:iconPadding="30dp"
+            android:backgroundTint="@color/white"
+            app:iconTint="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPastHirings"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="My Past Hirings"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_history"
+            app:iconGravity="textStart"
+            app:iconPadding="30dp"
+            android:backgroundTint="@color/white"
+            app:iconTint="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRateCareGivers"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="Rate  caregiver"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_rate"
+            app:iconGravity="textStart"
+            app:iconPadding="30dp"
+            android:backgroundTint="@color/white"
+            app:iconTint="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSettings"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="settings            "
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_settings_black"
+            app:iconGravity="textStart"
+            app:iconPadding="30dp"
+            android:backgroundTint="@color/white"
+            app:iconTint="@android:color/black" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        android:elevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogOut"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:text="logout "
+        android:textSize="24sp"
+        android:textColor="#FF0000"
+        app:icon="@drawable/ic_power_red"
+        app:iconGravity="textStart"
+        app:iconPadding="30dp"
+        android:backgroundTint="@color/white"
+        app:iconTint="#FF0000" />
+
+</LinearLayout>
