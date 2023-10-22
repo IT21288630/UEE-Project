@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HourlyServiceFragment">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="#C7E7F6"
+        android:id="@+id/cardView2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="686dp"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="218dp"
+                android:layout_height="44dp"
+                android:text="Book Now"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="731dp"
+                tools:layout_conversion_absoluteWidth="362dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/textInputEditText2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.046"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="377dp"
+                android:layout_height="44dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="108dp"
+                tools:ignore="MissingConstraints" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="390dp"
+                android:layout_height="57dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="480dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="123dp"
+                    android:layout_height="wrap_content"
+                    android:text="Gender of the Patient"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="61dp"
+                    android:layout_height="match_parent"
+                    android:text="M"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="F"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.655"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/other"
+                    android:layout_width="96dp"
+                    android:layout_height="33dp"
+                    android:text="Other"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.949"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RadioGroup>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expected Service Hours:"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="167dp"
+                tools:ignore="MissingConstraints" />
+
+                <NumberPicker
+                    android:id="@+id/ExpectedH"
+                    style="@style/NumberPickerStyle"
+                    android:layout_width="51dp"
+                    android:layout_height="36dp"
+                    android:outlineProvider="paddedBounds"
+                    android:padding="2dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="234dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/startDateEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Start Date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="8dp" />
+
+
+                <Button
+                    android:id="@+id/StartDate"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|start"
+                    app:icon="@drawable/ic_calender"
+                    app:strokeColor="@color/black"
+                    tools:ignore="MissingConstraints,RtlCompat"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="209dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="272dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="211dp"
+                tools:layout_editor_absoluteY="272dp"
+                tools:ignore="MissingConstraints" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TimePicker
+                android:id="@+id/Starttime"
+                android:layout_width="180dp"
+                android:layout_height="139dp"
+                android:timePickerMode="spinner"
+                app:layout_constraintEnd_toStartOf="@+id/Endtime"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="307dp"
+                tools:ignore="MissingConstraints" />
+
+            <TimePicker
+                android:id="@+id/Endtime"
+                android:layout_width="168dp"
+                android:layout_height="139dp"
+                android:layout_marginEnd="32dp"
+                android:timePickerMode="spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="307dp"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+            <CheckBox
+                android:id="@+id/termsAndConditionsCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I accept the terms and conditions" />
+
+
+
+            <Button
+                android:id="@+id/request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request Now"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+</FrameLayout>
