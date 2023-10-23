@@ -32,6 +32,10 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin: Button = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
+            /*@ToDo - search both Caregiver collection and Client collection. Get the type of matched collection. If matched with caregiver, load the caregiver UI, if matched with the client load client UI. Save user type in sharePref */
+
+
+
             if (userType.equals("caregiver")){
                 val caregiver = Caregiver(etUName.text.toString(), etPassword.text.toString())
 
