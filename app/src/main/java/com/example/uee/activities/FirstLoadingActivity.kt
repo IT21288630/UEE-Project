@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.uee.R
 
-class InitialLoadingActivity : AppCompatActivity() {
+class FirstLoadingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_initial_loading)
+        setContentView(R.layout.activity_first_loading)
 
         val signUPBtn = findViewById<Button>(R.id.btnSignUpIniti)
         val loginBtn = findViewById<Button>(R.id.btnLoginIniti)

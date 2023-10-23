@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/BtnSignUp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/goToLoginTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -78,7 +78,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/menu"
+            android:id="@+id/signUpMenuType"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
