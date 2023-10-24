@@ -21,4 +21,9 @@
     <style name="circle">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="Theme.App" parent="Theme.MaterialComponents">
+        ...
+        <item name="bottomNavigationStyle">@style/Widget.MaterialComponents.BottomNavigationView.Colored</item>
+    </style>
 </resources>

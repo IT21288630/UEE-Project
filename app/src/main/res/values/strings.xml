@@ -49,4 +49,8 @@
     <string name="space_large">                               </string>
     <string name="space_medium">                        </string>
     <string name="space_small">              </string>
+
+    <string name="btnLoginInitiTxt">LOGIN</string>
+    <string name="btnSignUpInitiTxt">SIGN UP</string>
+    <string name="appName">SerenityCare</string>
 </resources>
