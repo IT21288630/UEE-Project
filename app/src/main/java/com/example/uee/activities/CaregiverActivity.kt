@@ -16,6 +16,7 @@ class CaregiverActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCaregiverBinding
     private lateinit var caregiver: Caregiver
+    private lateinit var usertype: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,7 @@ class CaregiverActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
         val username = sharedPref.getString("userName", null)
+        usertype = sharedPref.getString("userType", null)!!
 
         //caregiver = intent.getParcelableExtra("caregiver")!!
 
@@ -58,6 +60,7 @@ class CaregiverActivity : AppCompatActivity() {
 
         val args = Bundle()
         args.putString("caregiverUsername", caregiver.username)
+        args.putString("usertype", usertype)
         fragment.arguments = args
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment)
@@ -70,6 +73,7 @@ class CaregiverActivity : AppCompatActivity() {
         val caregiverProfileFragment = CaregiverProfileFragment()
         val args = Bundle()
         args.putString("caregiverUsername", caregiver.username)
+        args.putString("usertype", usertype)
         caregiverProfileFragment.arguments = args
 
         supportFragmentManager.beginTransaction()
