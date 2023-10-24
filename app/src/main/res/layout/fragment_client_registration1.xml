@@ -70,7 +70,7 @@
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/BtnClientRegNext1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,6 +79,7 @@
         android:textColor="@color/black"
         app:cornerRadius="50dp"
         app:icon="@drawable/ic_next"
+        app:iconTint="@color/black"
         app:strokeColor="@color/black"
         android:layout_gravity="right"
         android:layout_margin="20dp"

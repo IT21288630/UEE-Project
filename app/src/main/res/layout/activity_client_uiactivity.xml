@@ -7,7 +7,7 @@
     tools:context=".activities.ClientUIActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
+        android:id="@+id/ClientUIFrag"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
@@ -22,7 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView2">
+        app:layout_constraintTop_toBottomOf="@+id/ClientUIFrag">
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
