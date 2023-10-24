@@ -12,6 +12,7 @@ import com.example.uee.R
 import com.example.uee.dataClasses.Caregiver
 import com.example.uee.dataClasses.Client
 import com.example.uee.dataClasses.LoginUser
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -36,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
         val editor = sharedPref.edit()
         val userType = sharedPref.getString("userType", null)
 
-        val etUName: EditText = findViewById(R.id.loginUserNameField)
-        val etPassword: EditText = findViewById(R.id.loginPswField)
+        val etUName: TextInputLayout = findViewById(R.id.loginUserNameField)
+        val etPassword: TextInputLayout = findViewById(R.id.loginPswField)
         val btnLogin: Button = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
@@ -59,14 +60,10 @@ class LoginActivity : AppCompatActivity() {
             editor.commit()
 
             //USL-step 1
-            val user = LoginUser(etUName.text.toString(), etPassword.text.toString())
+            val user = LoginUser(etUName.editText?.text.toString(), etPassword.editText?.text.toString())
             searchClientCollection(user)
 
-            if (userType.equals("caregiver")){
-                val caregiver = Caregiver(etUName.text.toString(), etPassword.text.toString())
 
-
-            }
         }
 
 
