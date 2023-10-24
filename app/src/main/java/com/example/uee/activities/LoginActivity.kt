@@ -171,7 +171,7 @@ class LoginActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.Main).launch {
                 val user = getCaregiverObject(validUser)
                 val intent = Intent(this@LoginActivity, CaregiverActivity::class.java)
-                intent.putExtra("caregiverData", user)
+                intent.putExtra("caregiver", user)
                 startActivity(intent)
             }
         }
