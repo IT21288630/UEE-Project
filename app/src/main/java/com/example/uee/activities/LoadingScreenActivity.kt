@@ -29,58 +29,65 @@ class LoadingScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading_screen)
 
-        //Checking shared preferences to configure the UI
-        val sharedPreferences = getSharedPreferences("appPref", Context.MODE_PRIVATE)
+        CoroutineScope(Dispatchers.Main).launch {
+            //Checking shared preferences to configure the UI
+            val sharedPreferences = getSharedPreferences("appPref", Context.MODE_PRIVATE)
 
-        if (!sharedPreferences.contains("userName") || !sharedPreferences.contains("userType")) {
-            //Loading first Loading page since preferences do not exist or are incomplete
-            val loadFirstLoading = Intent(this,FirstLoadingActivity::class.java)
-            startActivity(loadFirstLoading)
+            if (!sharedPreferences.contains("userName") || !sharedPreferences.contains("userType")) {
+                //Loading first Loading page since preferences do not exist or are incomplete
+                val loadFirstLoading = Intent(this@LoadingScreenActivity, FirstLoadingActivity::class.java)
+                startActivity(loadFirstLoading)
 
-        } else {
-            val accType = sharedPreferences.getString("userType", "")
+            } else {
+                val accType = sharedPreferences.getString("userType", "")
 
-            when (accType) {
-                "client" -> {
-                    // Action for "Client"
-                    val clientName = sharedPreferences.getString("userName", "")
-                    val userData =  getUserObject(clientName,accType )
+                when (accType) {
+                    "client" -> {
+                        // Action for "Client"
+                        val clientName = sharedPreferences.getString("userName", "")
+                        val userData = getUserObject(clientName, accType)
 
-                    if (userData is Client) {
-                        val clientData = userData as Client
-                        // Now you can use clientData as an object of type Client
-                        val loadClient = Intent(this,ClientUIActivity::class.java)
-                        loadClient.putExtra("clientData", clientData)
-                        startActivity(loadClient)
+                        if (userData is Client) {
+                            val clientData = userData as Client
+                            // Now you can use clientData as an object of type Client
+                            val loadClient = Intent(this@LoadingScreenActivity, ClientUIActivity::class.java)
+                            loadClient.putExtra("clientData", clientData)
+                            startActivity(loadClient)
+                        }
+
                     }
 
-                }
-                "caregiver" -> {
-                    // Action for "Caregiver"
-                    val caregiverName = sharedPreferences.getString("userName", "")
-                    val userData = getUserObject(caregiverName, accType)
+                    "caregiver" -> {
+                        // Action for "Caregiver"
+                        val caregiverName = sharedPreferences.getString("userName", "")
+                        val userData = getUserObject(caregiverName, accType)
 
-                    val loadCareGiver = Intent(this, CaregiverActivity::class.java)
-                    startActivity(loadCareGiver)
-                }
-                else -> {
-                    Toast.makeText(this, "Something went wrong. Please Login again", Toast.LENGTH_LONG).show()
+                        val loadCareGiver = Intent(this@LoadingScreenActivity, CaregiverActivity::class.java)
+                        startActivity(loadCareGiver)
+                    }
 
-                    //Forcing app to wait 1.5 seconds before redirecting to Login page.
-                    val handler = Handler(Looper.getMainLooper())
-                    handler.postDelayed({
+                    else -> {
+                        Toast.makeText(
+                            this@LoadingScreenActivity,
+                            "Something went wrong. Please Login again",
+                            Toast.LENGTH_LONG
+                        ).show()
 
-                        val loadLogin = Intent(this, LoginActivity::class.java)
-                        startActivity(loadLogin)
-                    }, 1500) // 3000 milliseconds = 3 seconds
+                        //Forcing app to wait 1.5 seconds before redirecting to Login page.
+                        val handler = Handler(Looper.getMainLooper())
+                        handler.postDelayed({
+
+                            val loadLogin = Intent(this@LoadingScreenActivity, LoginActivity::class.java)
+                            startActivity(loadLogin)
+                        }, 1500) // 3000 milliseconds = 3 seconds
+                    }
                 }
+
             }
-
         }
     }
 
-    private fun getUserObject(name : String?, type : String?) : Any? = CoroutineScope(Dispatchers.Main).launch  {
-
+    private suspend fun getUserObject(name: String?, type: String?): Any? = withContext(Dispatchers.Main) {
         val user = LoginUser(userName = name, userType = type, psw = null)
         var clientObject: Client? = null
         var caregiverObject: Caregiver? = null
@@ -91,8 +98,9 @@ class LoadingScreenActivity : AppCompatActivity() {
             caregiverObject = getCaregiverObject(user)
         }
 
-       clientObject ?: caregiverObject
+        clientObject ?: caregiverObject
     }
+
 
 
     private suspend fun getClientObject(getUser: LoginUser): Client? = withContext(Dispatchers.IO) {
