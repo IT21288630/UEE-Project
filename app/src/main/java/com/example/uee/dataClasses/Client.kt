@@ -16,4 +16,5 @@ data class Client(
     var psw: String? = null,
     var userName: String? = null,
     var userType: String? = null,
+    var image: String? = null,
 ) : Parcelable
