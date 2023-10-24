@@ -18,7 +18,7 @@ class MyApplication : Application() {
         FirebaseApp.initializeApp(this)
 
         val notificationConfig = NotificationConfig(
-            pushDeviceGenerators = listOf(FirebasePushDeviceGenerator(providerName = "PushConfig"))
+            pushDeviceGenerators = listOf(FirebasePushDeviceGenerator(providerName = "firebase"))
         )
 
         // Step 1 - Set up the OfflinePlugin for offline storage
