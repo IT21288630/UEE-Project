@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 
 import com.example.uee.R
@@ -33,6 +34,22 @@ class ClientRegistration1Fragment : Fragment() {
         return inflater.inflate(R.layout.fragment_client_registration1, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val nextBtn = view.findViewById<Button>(R.id.BtnClientRegNext1)
+
+        nextBtn.setOnClickListener(){
+
+            val fragment = ClientRegistration2Fragment()
+            val fragmentManager = parentFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.RegFragContainer, fragment)
+            fragmentTransaction.addToBackStack(null) //
+            fragmentTransaction.commit()
+        }
+
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

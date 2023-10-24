@@ -1,12 +1,15 @@
 package com.example.uee.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 
 import com.example.uee.R
+import com.example.uee.activities.LoginActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -33,6 +36,19 @@ class ClientRegistration2Fragment : Fragment() {
         return inflater.inflate(R.layout.fragment_client_registration2, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val doneBtn = view.findViewById<Button>(R.id.BtnClientRegDone)
+
+
+        //Done button action
+         doneBtn.setOnClickListener(){
+
+             val intent = Intent(requireContext(), LoginActivity::class.java)
+             startActivity(intent)
+         }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

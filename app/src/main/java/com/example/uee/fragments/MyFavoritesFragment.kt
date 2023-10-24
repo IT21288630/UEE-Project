@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.uee.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,6 +39,15 @@ class MyFavoritesFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_my_favorites, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val backNav = view.findViewById<TextView>(R.id.viewBackToSettings)
+
+        backNav.setOnClickListener(){
+            parentFragmentManager.popBackStack()
+        }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

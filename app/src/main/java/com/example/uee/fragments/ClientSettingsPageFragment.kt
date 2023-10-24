@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import com.example.uee.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,6 +39,31 @@ class ClientSettingsPageFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_client_settings_page, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val backNav = view.findViewById<TextView>(R.id.viewBackToProfile)
+        val yourFav = view.findViewById<Button>(R.id.btnYourFavorites)
+        val mypastHirings = view.findViewById<Button>(R.id.btnPastHirings)
+        val rateCaregivers = view.findViewById<Button>(R.id.btnRateCareGivers)
+        val settingsBtn = view.findViewById<Button>(R.id.btnSettings)
+
+        backNav.setOnClickListener(){
+            parentFragmentManager.popBackStack()
+
+        }
+
+        yourFav.setOnClickListener(){
+
+            val fragment = MyFavoritesFragment()
+            val fragmentManager = parentFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.ClientUIFrag, fragment)
+            fragmentTransaction.addToBackStack(null) //
+            fragmentTransaction.commit()
+        }
     }
 
     companion object {
