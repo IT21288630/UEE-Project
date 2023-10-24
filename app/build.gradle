@@ -65,6 +65,9 @@ dependencies {
 
     implementation("io.getstream:stream-chat-android-pushprovider-firebase:5.17.13")
 
+    implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:2.+'
+    implementation 'com.github.ZEGOCLOUD:zego_uikit_signaling_plugin_android:2.+'
+
     implementation "androidx.fragment:fragment-ktx:1.6.1"
 
     implementation 'com.google.code.gson:gson:2.8.8'

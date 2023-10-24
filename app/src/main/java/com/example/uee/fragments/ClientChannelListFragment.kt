@@ -1,9 +1,7 @@
 package com.example.uee.fragments
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,15 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.uee.R
 import com.example.uee.activities.ChatActivity
-import com.example.uee.dataClasses.Caregiver
 import com.example.uee.dataClasses.ChatUser
-import com.example.uee.databinding.FragmentChannelListBinding
+import com.example.uee.dataClasses.Client
+import com.example.uee.databinding.FragmentClientChannelListBinding
 import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.google.android.material.transition.platform.MaterialSharedAxis
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.google.gson.Gson
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.Filters
 import io.getstream.chat.android.client.models.User
@@ -34,15 +31,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
-class ChannelListFragment : Fragment() {
+class ClientChannelListFragment : Fragment() {
 
     private val client = ChatClient.instance()
-    private val caregiverCollectionRef = Firebase.firestore.collection("Caregivers")
+    private val clientCollectionRef = Firebase.firestore.collection("Clients")
     private lateinit var chatUser: ChatUser
-    private lateinit var caregiver: Caregiver
+    private lateinit var clientUser: Client
     private lateinit var user: User
-    private lateinit var caregiverUsername: String
-    private lateinit var binding: FragmentChannelListBinding
+    private lateinit var clientUsername: String
+    private lateinit var binding: FragmentClientChannelListBinding
     lateinit var targetUserID: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +54,7 @@ class ChannelListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentChannelListBinding.inflate(inflater, container, false)
+        binding = FragmentClientChannelListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -65,9 +62,9 @@ class ChannelListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val args = arguments
-        caregiverUsername = args?.getString("caregiverUsername")!!
+        clientUsername = args?.getString("clientUsername")!!
 
-        getCaregiver()
+        getClient()
 
         binding.channelListView.setChannelItemClickListener { channel ->
             var members = channel.members
@@ -93,13 +90,13 @@ class ChannelListFragment : Fragment() {
         }
     }
 
-    private fun getCaregiver() = CoroutineScope(Dispatchers.IO).launch {
+    private fun getClient() = CoroutineScope(Dispatchers.IO).launch {
         try {
             val querySnapshot =
-                caregiverCollectionRef.whereEqualTo("username", caregiverUsername).get().await()
+                clientCollectionRef.whereEqualTo("userName", clientUsername).get().await()
 
             for (document in querySnapshot.documents) {
-                caregiver = document.toObject<Caregiver>()!!
+                clientUser = document.toObject<Client>()!!
             }
 
             withContext(Dispatchers.Main) {
@@ -113,10 +110,10 @@ class ChannelListFragment : Fragment() {
     }
 
     private fun connectUser() {
-        if (caregiver.image != null) {
-            chatUser = ChatUser(caregiver.username!!, caregiver.name!!, caregiver.image!!)
+        if (clientUser.image != null) {
+            chatUser = ChatUser(clientUser.userName!!, clientUser.name!!, clientUser.image!!)
         } else {
-            chatUser = ChatUser(caregiver.username!!, caregiver.name!!, null)
+            chatUser = ChatUser(clientUser.userName!!, clientUser.name!!, null)
         }
 
         //Authenticate and connect the user
@@ -125,7 +122,7 @@ class ChannelListFragment : Fragment() {
         )
 
         if (chatUser.image != null) {
-            user.image = caregiver.image!!
+            user.image = clientUser.image!!
         }
 
         val token = client.devToken(user.id)

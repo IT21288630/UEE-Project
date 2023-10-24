@@ -48,6 +48,7 @@
                             android:textSize="30sp" />
 
                         <Button
+                            android:id="@+id/btnMsg"
                             style="@style/Widget.Material3.Button.IconButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -167,6 +168,7 @@
                                     android:src="@drawable/ic_small_circle" />
 
                                 <TextView
+                                    android:id="@+id/tvExperience"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@drawable/rounded_corner_large" />
@@ -181,6 +183,7 @@
                             android:layout_weight="1">
 
                             <Button
+                                android:id="@+id/btnHire"
                                 style="@style/Widget.Material3.Button.IconButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

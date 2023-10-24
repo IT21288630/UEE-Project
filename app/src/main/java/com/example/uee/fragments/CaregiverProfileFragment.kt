@@ -30,9 +30,11 @@ class CaregiverProfileFragment : Fragment() {
     private val caregiverCollectionRef = Firebase.firestore.collection("Caregivers")
     private lateinit var caregiver: Caregiver
     private lateinit var caregiverUsername: String
+    private lateinit var usertype: String
     private lateinit var tvName: TextView
     private lateinit var tvAge: TextView
     private lateinit var tvLocation: TextView
+    private lateinit var tvExperience: TextView
     private lateinit var tvAbout: TextView
     private lateinit var tvHourlyRate: TextView
     private lateinit var tvShortNotice: TextView
@@ -63,10 +65,17 @@ class CaregiverProfileFragment : Fragment() {
 
         val args = arguments
         caregiverUsername = args?.getString("caregiverUsername")!!
+        usertype = args?.getString("usertype")!!
+
+        if (usertype == "caregiver") {
+            binding.btnHire.isGone = true
+            binding.btnMsg.isGone = true
+        }
 
         tvName = binding.tvName
         tvAge = binding.tvAge
         tvLocation = binding.tvLocation
+        tvExperience = binding.tvExperience
         tvAbout = binding.tvAbout
         tvHourlyRate = binding.tvHourlyRate
         tvShortNotice = binding.tvShortNotice
@@ -100,6 +109,7 @@ class CaregiverProfileFragment : Fragment() {
         tvName.background = null
         tvAge.background = null
         tvLocation.background = null
+        tvExperience.background = null
         tvAbout.background = null
         tvHourlyRate.background = null
         tvShortNotice.background = null
@@ -114,6 +124,7 @@ class CaregiverProfileFragment : Fragment() {
         tvName.text = caregiver.name
         tvAge.text = "Age: ${caregiver.age}"
         tvLocation.text = caregiver.location
+        tvExperience.text = "5+ years experience"
         tvAbout.text = caregiver.about
         tvHourlyRate.text = "Rs${caregiver.daily}"
         tvShortNotice.text = "Rs${caregiver.shortNotice}"
