@@ -1,5 +1,6 @@
 package com.example.uee.activities
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,7 +23,12 @@ class CaregiverActivity : AppCompatActivity() {
         binding = ActivityCaregiverBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        caregiver = intent.getParcelableExtra("caregiver")!!
+        val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
+        val username = sharedPref.getString("userName", null)
+
+        //caregiver = intent.getParcelableExtra("caregiver")!!
+
+        caregiver = Caregiver(username = username)
 
         setCaregiverProfileFragment()
 
@@ -54,7 +60,8 @@ class CaregiverActivity : AppCompatActivity() {
         args.putString("caregiverUsername", caregiver.username)
         fragment.arguments = args
 
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment)
+            .addToBackStack(null).commit()
 
     }
 
@@ -65,6 +72,7 @@ class CaregiverActivity : AppCompatActivity() {
         args.putString("caregiverUsername", caregiver.username)
         caregiverProfileFragment.arguments = args
 
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, caregiverProfileFragment).commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame_layout, caregiverProfileFragment).commit()
     }
 }
