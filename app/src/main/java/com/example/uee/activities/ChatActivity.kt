@@ -18,7 +18,7 @@ import io.getstream.chat.android.ui.message.list.viewmodel.factory.MessageListVi
 class ChatActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityChatBinding
-    private val client = ChatClient.instance()
+    //private val client = ChatClient.instance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

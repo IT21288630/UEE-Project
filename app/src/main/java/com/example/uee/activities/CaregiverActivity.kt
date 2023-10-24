@@ -55,6 +55,7 @@ class CaregiverActivity : AppCompatActivity() {
         fragment.arguments = args
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit()
+
     }
 
     private fun setCaregiverProfileFragment() {
