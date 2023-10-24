@@ -1,7 +1,10 @@
 package com.example.uee.fragments
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isGone
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.example.uee.dataClasses.Caregiver
@@ -18,6 +22,8 @@ import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.google.gson.Gson
 import io.getstream.chat.android.client.models.User
 import kotlinx.coroutines.CoroutineScope
@@ -26,11 +32,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import okhttp3.internal.wait
+import java.util.*
 
 class CaregiverSettingsFragment : Fragment() {
 
     private lateinit var binding: FragmentCaregiverSettingsBinding
     private val caregiverCollectionRef = Firebase.firestore.collection("Caregivers")
+    private lateinit var firebaseStorage: FirebaseStorage
+    private lateinit var storageRef: StorageReference
     private lateinit var caregiverUsername: String
     private lateinit var caregiver: Caregiver
     private lateinit var nameLayout: TextInputLayout
@@ -43,6 +52,7 @@ class CaregiverSettingsFragment : Fragment() {
     private lateinit var wakingLayout: TextInputLayout
     private lateinit var partTimeLayout: TextInputLayout
     private lateinit var fullTimeLayout: TextInputLayout
+    private var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,6 +111,15 @@ class CaregiverSettingsFragment : Fragment() {
             layout.setEndIconOnClickListener {
                 updateField(layout)
             }
+        }
+
+        binding.ivImageIcon.setOnClickListener {
+            choosePicture()
+        }
+
+        binding.uploadBtn.setOnClickListener {
+            uploadImage()
+            binding.uploadBtn.isGone = true
         }
 
         binding.toolbar.setNavigationOnClickListener {
@@ -225,5 +244,45 @@ class CaregiverSettingsFragment : Fragment() {
         }
 
         binding.avatarView.setUserData(user)
+    }
+
+    private fun choosePicture() {
+        var intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, 1)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            imageUri = data.data
+            binding.uploadBtn.isGone = false
+        }
+    }
+    private fun uploadImage() {
+        val key = UUID.randomUUID().toString()
+
+        firebaseStorage = FirebaseStorage.getInstance()
+        storageRef = firebaseStorage.reference
+
+        val profilePicRef = storageRef.child("profile_pics/${caregiver.username}")
+
+        imageUri?.let { uri ->
+            profilePicRef.putFile(uri).addOnSuccessListener {
+                Log.d("CaregiverRegister2Fragment", "Success uploaded profile pic")
+            }.addOnFailureListener {
+                Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_LONG).show()
+            }.addOnCompleteListener {
+                profilePicRef.downloadUrl.addOnSuccessListener { download ->
+                    val imageUrl = download.toString()
+                    caregiver.image = imageUrl
+
+                    val user = User(image = caregiver.image!!)
+                    binding.avatarView.setUserData(user)
+                }
+            }
+        }
     }
 }

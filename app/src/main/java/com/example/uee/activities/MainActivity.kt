@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val btnClient:Button = findViewById(R.id.btnClient)
 
         btnCareGiver.setOnClickListener{
-            val intent = Intent(this, CaregiverRegisterActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
