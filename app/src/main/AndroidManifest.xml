@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,16 +23,34 @@
         android:theme="@style/Theme.UEE"
         tools:targetApi="31">
         <activity
+            android:name=".activities.LoadingScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ClientUIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ClientRegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.CaregiverRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activities.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CaregiverActivity"
+            android:name=".activities.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FirstLoadingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CaregiverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginOldActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
