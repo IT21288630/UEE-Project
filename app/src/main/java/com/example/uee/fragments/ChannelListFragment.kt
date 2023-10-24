@@ -43,6 +43,7 @@ class ChannelListFragment : Fragment() {
     private lateinit var user: User
     private lateinit var caregiverUsername: String
     private lateinit var binding: FragmentChannelListBinding
+    lateinit var targetUserID: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,12 +70,20 @@ class ChannelListFragment : Fragment() {
         getCaregiver()
 
         binding.channelListView.setChannelItemClickListener { channel ->
+            var members = channel.members
+
+            for (member in members) {
+                if (member.getUserId() != client.getCurrentUser()?.id){
+                    targetUserID = member.getUserId()
+                }
+            }
 
             exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
             val intent = Intent(requireContext(), ChatActivity::class.java)
             intent.putExtra("cid", channel.cid)
+            intent.putExtra("targetUserID", targetUserID)
             startActivity(intent)
             activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }

@@ -1,15 +1,13 @@
 package com.example.uee.activities
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.uee.fragments.CaregiverSettingsFragment
 import com.example.uee.R
 import com.example.uee.dataClasses.Caregiver
-import com.example.uee.dataClasses.ChatUser
 import com.example.uee.databinding.ActivityCaregiverBinding
 import com.example.uee.fragments.CaregiverProfileFragment
+import com.example.uee.fragments.CaregiverSettingsFragment
 import com.example.uee.fragments.ChannelListFragment
 
 class CaregiverActivity : AppCompatActivity() {
