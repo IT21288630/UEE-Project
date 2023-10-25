@@ -261,6 +261,7 @@ class CaregiverSettingsFragment : Fragment() {
             binding.uploadBtn.isGone = false
         }
     }
+
     private fun uploadImage() {
         val key = UUID.randomUUID().toString()
 
@@ -281,6 +282,17 @@ class CaregiverSettingsFragment : Fragment() {
 
                     val user = User(image = caregiver.image!!)
                     binding.avatarView.setUserData(user)
+
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val querySnapshot =
+                            caregiverCollectionRef.whereEqualTo("username", caregiver.username)
+                                .get().await()
+
+                        for (document in querySnapshot.documents) {
+                            caregiverCollectionRef.document(document.id)
+                                .update("image", caregiver.image)
+                        }
+                    }
                 }
             }
         }
