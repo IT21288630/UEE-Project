@@ -55,9 +55,9 @@ class ClientProfileFragment : Fragment() {
 
         val list = ArrayList<clientCarouselDataModel>()
 
-        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Location Based"))
-        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Top Rated"))
-        list.add(clientCarouselDataModel(R.drawable.uploaddp, "My Favorites"))
+        list.add(clientCarouselDataModel(R.drawable.locationbasedimg, "Location Based"))
+        list.add(clientCarouselDataModel(R.drawable.topratedimg, "Top Rated"))
+        list.add(clientCarouselDataModel(R.drawable.favoritesimg, "My Favorites"))
 
         val clientName = view.findViewById<TextView>(R.id.txtClientProName)
         val clientImage = view.findViewById<ImageView>(R.id.imgViewClientProPic)

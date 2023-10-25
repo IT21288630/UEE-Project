@@ -1,5 +1,6 @@
 package com.example.uee.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.uee.R
+import com.example.uee.activities.LoginActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,12 +28,16 @@ class ClientSettingsPageFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
     }
 
     override fun onCreateView(
@@ -44,11 +51,16 @@ class ClientSettingsPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharedPref = requireActivity().getSharedPreferences("appPref", AppCompatActivity.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
         val backNav = view.findViewById<TextView>(R.id.viewBackToProfile)
         val yourFav = view.findViewById<Button>(R.id.btnYourFavorites)
         val mypastHirings = view.findViewById<Button>(R.id.btnPastHirings)
         val rateCaregivers = view.findViewById<Button>(R.id.btnRateCareGivers)
         val settingsBtn = view.findViewById<Button>(R.id.btnSettings)
+        val logoutBtn = view.findViewById<Button>(R.id.btnLogOut)
+
 
         backNav.setOnClickListener(){
             parentFragmentManager.popBackStack()
@@ -63,6 +75,17 @@ class ClientSettingsPageFragment : Fragment() {
             fragmentTransaction.replace(R.id.ClientUIFrag, fragment)
             fragmentTransaction.addToBackStack(null) //
             fragmentTransaction.commit()
+        }
+
+        logoutBtn.setOnClickListener(){
+            editor.clear()
+            editor.commit()
+            Toast.makeText(requireContext(), "Logged out successfully!", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            startActivity(intent)
+
+
         }
     }
 

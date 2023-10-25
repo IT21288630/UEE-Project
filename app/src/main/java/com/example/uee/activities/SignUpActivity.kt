@@ -22,7 +22,12 @@ class SignUpActivity : AppCompatActivity() {
         val signUpBtn = findViewById<Button>(R.id.BtnSignUp)
         val goToLoginText = findViewById<TextView>(R.id.goToLoginTxt)
         val getEmailTxt = findViewById<TextInputLayout>(R.id.SignupEmailField)
+        val goToLogin = findViewById<TextView>(R.id.goToLoginTxt)
 
+        goToLogin.setOnClickListener(){
+            val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         val items = listOf("Client", "Caregiver")
         val adapter = ArrayAdapter(this, R.layout.signup_item, items)
