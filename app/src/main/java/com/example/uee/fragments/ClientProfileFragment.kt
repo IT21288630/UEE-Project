@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 import com.example.uee.R
 import com.example.uee.adapters.clientCarouselAdapter
+import com.example.uee.dataClasses.Client
 import com.example.uee.models.clientCarouselDataModel
 import com.jackandphantom.carouselrecyclerview.CarouselLayoutManager
 import com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
@@ -22,12 +25,14 @@ class ClientProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private var clientData: Client? = null
+    private var clinetArgName : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-        }
+
+
+
     }
 
     override fun onCreateView(
@@ -41,14 +46,23 @@ class ClientProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Access clientData here
+        clientData = requireArguments().getParcelable("clientData")
+
+
+
         val carouselRecyclerview = view.findViewById<CarouselRecyclerview>(R.id.recycler)
 
         val list = ArrayList<clientCarouselDataModel>()
 
-        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Adastra"))
-        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Beach Bum"))
-        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Dark Phoenix"))
+        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Location Based"))
+        list.add(clientCarouselDataModel(R.drawable.uploaddp, "Top Rated"))
+        list.add(clientCarouselDataModel(R.drawable.uploaddp, "My Favorites"))
 
+        val clientName = view.findViewById<TextView>(R.id.txtClientProName)
+        val clientImage = view.findViewById<ImageView>(R.id.imgViewClientProPic)
+
+        clientName.text = clientData?.name?: "Anoonymous"
 
 
         val adapter = clientCarouselAdapter(list)
@@ -90,3 +104,5 @@ class ClientProfileFragment : Fragment() {
             }
     }
 }
+
+
