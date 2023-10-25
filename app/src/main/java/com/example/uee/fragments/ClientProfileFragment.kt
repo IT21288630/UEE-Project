@@ -1,5 +1,6 @@
 package com.example.uee.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 import com.example.uee.R
+import com.example.uee.activities.FilteredCaregiverActivity
 import com.example.uee.adapters.clientCarouselAdapter
 import com.example.uee.dataClasses.Client
 import com.example.uee.models.clientCarouselDataModel
@@ -85,6 +87,14 @@ class ClientProfileFragment : Fragment() {
                 //Cente item
                 Toast.makeText(requireContext(), list[position].text, Toast.LENGTH_LONG).show()
 
+               // Handle item click event here
+               val selectedItem = list[position]
+               val selectedItemString = selectedItem.toString()
+               // Create an intent
+               val intent = Intent(requireContext(), FilteredCaregiverActivity::class.java)
+
+               intent.putExtra("selectedItem", selectedItemString)
+               startActivity(intent)
             }
         })
 
