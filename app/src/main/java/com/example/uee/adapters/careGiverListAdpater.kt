@@ -31,4 +31,9 @@ class careGiverListAdpater(var mList: List<Caregiver>) :RecyclerView.Adapter<car
         holder.titleTv.text = mList[position].name
 
     }
+
+    fun setFilteredList(mList: List<Caregiver>){
+        this.mList = mList
+        notifyDataSetChanged()
+    }
 }
