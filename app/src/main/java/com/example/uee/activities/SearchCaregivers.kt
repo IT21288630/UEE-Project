@@ -3,6 +3,7 @@ package com.example.uee.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,7 @@ class SearchCaregivers : AppCompatActivity() {
     private lateinit var searchRecyclerView: RecyclerView
 
     private lateinit var searchView: SearchView
+    private lateinit var caregiver: Caregiver
 
     private var mList = ArrayList<Caregiver>()
     private lateinit var adapter: careGiverListAdpater
@@ -29,6 +31,12 @@ class SearchCaregivers : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_caregivers)
+
+
+
+
+
+
 
         searchRecyclerView = findViewById(R.id.searchRecyclerView)
 
@@ -78,7 +86,7 @@ class SearchCaregivers : AppCompatActivity() {
         if (query != null) {
             val filteredList = ArrayList<Caregiver>()
             for (i in mList) {
-                if (i.username?.lowercase(Locale.ROOT)?.contains(query) == true) {
+                if (i.name?.lowercase(Locale.ROOT)?.contains(query) == true) {
                     filteredList.add(i)
                 }
             }

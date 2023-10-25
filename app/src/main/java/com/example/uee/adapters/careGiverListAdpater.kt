@@ -1,5 +1,6 @@
 package com.example.uee.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,18 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uee.R
+import com.example.uee.activities.CaregiverActivity
+import com.example.uee.activities.LoginActivity
 import com.example.uee.dataClasses.Caregiver
+import com.example.uee.fragments.CaregiverProfileFragment
 
 class careGiverListAdpater(var mList: List<Caregiver>) :RecyclerView.Adapter<careGiverListAdpater.careGiverViewHolder>() {
-
-
-
-
-
-
-
-
-
 
 
 
@@ -41,13 +36,28 @@ class careGiverListAdpater(var mList: List<Caregiver>) :RecyclerView.Adapter<car
 
     override fun onBindViewHolder(holder: careGiverViewHolder, position: Int) {
         //holder.logo.setImageResource(mList[position].image)
-        holder.titleTv.text = mList[position].name
+        val name = mList[position].name
+        holder.titleTv.text = name
         holder.location.text = mList[position].location
+        holder.titleTv.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, CaregiverActivity::class.java)
 
-    }
+
+            intent.putExtra("username", name)
+
+            context.startActivity(intent)
+        }
+        }
 
     fun setFilteredList(mList: List<Caregiver>){
         this.mList = mList
         notifyDataSetChanged()
     }
+
+
+
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.uee.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import com.example.uee.R
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,15 +55,9 @@ class ClientSettingsPageFragment : Fragment() {
             parentFragmentManager.popBackStack()
 
         }
-
-        yourFav.setOnClickListener(){
-
-            val fragment = MyFavoritesFragment()
-            val fragmentManager = parentFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.ClientUIFrag, fragment)
-            fragmentTransaction.addToBackStack(null) //
-            fragmentTransaction.commit()
+        yourFav.setOnClickListener {
+            val intent = Intent(requireContext(), MyFavoritesFragment::class.java)
+            startActivity(intent)
         }
     }
 
