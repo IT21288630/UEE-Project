@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.viewModels
+import androidx.core.view.isGone
 import com.example.uee.R
 import com.example.uee.databinding.ActivityChatBinding
 import com.getstream.sdk.chat.viewmodel.MessageInputViewModel
@@ -85,12 +86,22 @@ class ChatActivity : AppCompatActivity() {
 
         setVideoCall()
 
-        binding.messageListHeaderView.setAvatarClickListener {
-            val targetUserName = targetUserID
+        val targetUserName = targetUserID
 
-            binding.btnCall.setIsVideoCall(true)
-            binding.btnCall.resourceID = "zego_uikit_call"
-            binding.btnCall.setInvitees(Collections.singletonList(ZegoUIKitUser(targetUserID, targetUserName)))
+        binding.btnCall.isGone = true
+        binding.btnCall.setIsVideoCall(true)
+        binding.btnCall.resourceID = "zego_uikit_call"
+        binding.btnCall.setInvitees(
+            Collections.singletonList(
+                ZegoUIKitUser(
+                    targetUserID,
+                    targetUserName
+                )
+            )
+        )
+
+        binding.messageListHeaderView.setAvatarClickListener {
+            binding.btnCall.performClick()
         }
     }
 
