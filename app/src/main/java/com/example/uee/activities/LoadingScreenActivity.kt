@@ -46,14 +46,12 @@ class LoadingScreenActivity : AppCompatActivity() {
                         // Action for "Client"
                         val clientName = sharedPreferences.getString("userName", "")
                         val userData = getUserObject(clientName, accType)
+                        val clientData = userData as Client
 
-                        if (userData is Client) {
-                            val clientData = userData as Client
-                            // Now you can use clientData as an object of type Client
-                            val loadClient = Intent(this@LoadingScreenActivity, ClientUIActivity::class.java)
-                            loadClient.putExtra("clientData", clientData)
-                            startActivity(loadClient)
-                        }
+                        val loadClient = Intent(this@LoadingScreenActivity, ClientUIActivity::class.java)
+                        loadClient.putExtra("clientData", clientData)
+                        startActivity(loadClient)
+
 
                     }
 
@@ -61,9 +59,13 @@ class LoadingScreenActivity : AppCompatActivity() {
                         // Action for "Caregiver"
                         val caregiverName = sharedPreferences.getString("userName", "")
                         val userData = getUserObject(caregiverName, accType)
+                        val caregiverData = userData as Caregiver
 
                         val loadCareGiver = Intent(this@LoadingScreenActivity, CaregiverActivity::class.java)
+                        loadCareGiver.putExtra("caregiverData", caregiverData)
                         startActivity(loadCareGiver)
+
+
                     }
 
                     else -> {
@@ -79,7 +81,7 @@ class LoadingScreenActivity : AppCompatActivity() {
 
                             val loadLogin = Intent(this@LoadingScreenActivity, LoginActivity::class.java)
                             startActivity(loadLogin)
-                        }, 1500) // 3000 milliseconds = 3 seconds
+                        }, 1500) // 1500 milliseconds = 3 seconds
                     }
                 }
 
