@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.uee.activities.CaregiverActivity
+import com.example.uee.activities.LoginActivity
 import com.example.uee.dataClasses.Caregiver
 import com.example.uee.databinding.FragmentCaregiverRegister3Binding
 import com.google.android.material.textfield.TextInputLayout
@@ -102,7 +103,7 @@ class CaregiverRegister3Fragment : Fragment() {
 
             registerCaregiver()
 
-            val intent = Intent(requireContext(), CaregiverActivity::class.java)
+            val intent = Intent(requireContext(), LoginActivity::class.java)
             intent.putExtra("caregiver", caregiver)
             startActivity(intent)
             activity?.finish()
