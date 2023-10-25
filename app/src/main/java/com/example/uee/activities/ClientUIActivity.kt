@@ -2,6 +2,7 @@ package com.example.uee.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.uee.R
@@ -14,11 +15,16 @@ import com.example.uee.fragments.MyFavoritesFragment
 
 class ClientUIActivity : AppCompatActivity() {
 
+
+
     private lateinit var username: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_client_uiactivity)
+
+
+
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
@@ -26,6 +32,9 @@ class ClientUIActivity : AppCompatActivity() {
         val clientData: Client? = intent.getParcelableExtra("clientData")
         val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
         username = sharedPref.getString("userName", null)!!
+
+
+
 
         //Setting default fragment
         if (clientData != null) {

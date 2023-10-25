@@ -1,15 +1,18 @@
 package com.example.uee.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 import com.example.uee.R
+import com.example.uee.activities.SearchCaregivers
 import com.example.uee.adapters.clientCarouselAdapter
 import com.example.uee.dataClasses.Client
 import com.example.uee.models.clientCarouselDataModel
@@ -31,9 +34,9 @@ class ClientProfileFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
 
-
-
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,8 +64,14 @@ class ClientProfileFragment : Fragment() {
 
         val clientName = view.findViewById<TextView>(R.id.txtClientProName)
         val clientImage = view.findViewById<ImageView>(R.id.imgViewClientProPic)
-
+        val toSearch = view.findViewById<Button>(R.id.btnToSearch)
         clientName.text = clientData?.name?: "Anoonymous"
+
+
+        toSearch.setOnClickListener {
+            val toSearchIntent = Intent(requireContext(), SearchCaregivers::class.java)
+            startActivity(toSearchIntent)
+        }
 
 
         val adapter = clientCarouselAdapter(list)

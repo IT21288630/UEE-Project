@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         /*val sharedPref = getSharedPreferences("appPref", MODE_PRIVATE)
         val editor = sharedPref.edit()
 
