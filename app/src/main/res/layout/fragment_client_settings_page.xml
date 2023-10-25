@@ -195,68 +195,74 @@
 
         />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:fillViewport="true">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnYourFavorites"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:padding="10dp"
             android:layout_height="wrap_content"
-            android:text="Your Favourites"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            app:icon="@drawable/ic_fav_black"
-            app:iconGravity="textStart"
-            app:iconPadding="30dp"
-            android:backgroundTint="@color/white"
-            app:iconTint="@android:color/black" />
+            android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnPastHirings"
-            android:layout_width="match_parent"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:text="My Past Hirings"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            app:icon="@drawable/ic_history"
-            app:iconGravity="textStart"
-            app:iconPadding="30dp"
-            android:backgroundTint="@color/white"
-            app:iconTint="@android:color/black" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnYourFavorites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:text="Your Favourites"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_fav_black"
+                app:iconGravity="textStart"
+                app:iconPadding="30dp"
+                app:iconTint="@android:color/black" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRateCareGivers"
-            android:layout_width="match_parent"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:text="Rate  caregiver"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            app:icon="@drawable/ic_rate"
-            app:iconGravity="textStart"
-            app:iconPadding="30dp"
-            android:backgroundTint="@color/white"
-            app:iconTint="@android:color/black" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPastHirings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:text="My Past Hirings"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_history"
+                app:iconGravity="textStart"
+                app:iconPadding="30dp"
+                app:iconTint="@android:color/black" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSettings"
-            android:layout_width="match_parent"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:text="settings            "
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            app:icon="@drawable/ic_settings_black"
-            app:iconGravity="textStart"
-            app:iconPadding="30dp"
-            android:backgroundTint="@color/white"
-            app:iconTint="@android:color/black" />
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRateCareGivers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:text="Rate  caregiver"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_rate"
+                app:iconGravity="textStart"
+                app:iconPadding="30dp"
+                app:iconTint="@android:color/black" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:text="settings            "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_settings_black"
+                app:iconGravity="textStart"
+                app:iconPadding="30dp"
+                app:iconTint="@android:color/black" />
+        </LinearLayout>
+
+    </ScrollView>
     <View
         android:id="@+id/divider7"
         android:layout_width="match_parent"

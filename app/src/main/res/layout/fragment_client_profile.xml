@@ -182,6 +182,7 @@
                             />
 
                         <LinearLayout
+                            android:id="@+id/clickMeToSeeHirings"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -191,7 +192,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="You have no active hirings!"
+                                android:text="Click me to see your hirings!"
                                 android:layout_margin="10dp"
                                 />
                         </LinearLayout>
