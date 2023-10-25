@@ -297,7 +297,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/daily"
-                            android:textSize="10sp"
+                            android:textSize="13sp"
                             tools:ignore="SmallSp" />
 
                         <LinearLayout
@@ -311,7 +311,7 @@
                                 android:layout_marginStart="10dp"
                                 android:text="@string/rs2000"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
@@ -321,7 +321,7 @@
                                 android:layout_marginStart="5dp"
                                 android:text="@string/per_hour"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 
@@ -362,7 +362,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/short_notice_care"
-                            android:textSize="10sp"
+                            android:textSize="13sp"
                             tools:ignore="SmallSp" />
 
                         <LinearLayout
@@ -376,7 +376,7 @@
                                 android:layout_marginStart="10dp"
                                 android:text="@string/rs2000"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
@@ -386,7 +386,7 @@
                                 android:layout_marginStart="5dp"
                                 android:text="@string/per_hour"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 
@@ -434,7 +434,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/sleeping"
-                            android:textSize="10sp"
+                            android:textSize="13sp"
                             tools:ignore="SmallSp" />
 
                         <LinearLayout
@@ -448,7 +448,7 @@
                                 android:layout_marginStart="10dp"
                                 android:text="@string/rs2000"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
@@ -458,7 +458,7 @@
                                 android:layout_marginStart="5dp"
                                 android:text="@string/per_hour"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 
@@ -469,7 +469,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/waking"
-                            android:textSize="10sp"
+                            android:textSize="13sp"
                             tools:ignore="SmallSp" />
 
                         <LinearLayout
@@ -483,7 +483,7 @@
                                 android:layout_marginStart="10dp"
                                 android:text="@string/rs2000"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
@@ -493,7 +493,7 @@
                                 android:layout_marginStart="5dp"
                                 android:text="@string/per_hour"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 
@@ -534,7 +534,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/part_time"
-                            android:textSize="10sp"
+                            android:textSize="13sp"
                             tools:ignore="SmallSp" />
 
                         <LinearLayout
@@ -548,7 +548,7 @@
                                 android:layout_marginStart="10dp"
                                 android:text="@string/rs2000"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
@@ -558,7 +558,7 @@
                                 android:layout_marginStart="5dp"
                                 android:text="@string/per_hour"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 
@@ -569,7 +569,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:text="@string/full_time"
-                            android:textSize="10sp"
+                            android:textSize="13sp"
                             tools:ignore="SmallSp" />
 
                         <LinearLayout
@@ -583,7 +583,7 @@
                                 android:layout_marginStart="10dp"
                                 android:text="@string/rs2000"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
@@ -593,7 +593,7 @@
                                 android:layout_marginStart="5dp"
                                 android:text="@string/per_hour"
                                 android:textColor="@color/black"
-                                android:textSize="10sp"
+                                android:textSize="13sp"
                                 tools:ignore="SmallSp" />
                         </LinearLayout>
 

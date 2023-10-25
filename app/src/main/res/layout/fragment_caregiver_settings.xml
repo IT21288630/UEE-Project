@@ -275,7 +275,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
                         android:text="@string/short_notice_care"
-                        android:textSize="10sp"
+                        android:textSize="14sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -337,7 +337,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="@string/sleeping"
-                        android:textSize="10sp"
+                        android:textSize="14sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -367,7 +367,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="@string/waking"
-                        android:textSize="10sp"
+                        android:textSize="14sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -428,7 +428,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="@string/part_time"
-                        android:textSize="10sp"
+                        android:textSize="14sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -458,7 +458,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="@string/full_time"
-                        android:textSize="10sp"
+                        android:textSize="14sp"
                         tools:ignore="SmallSp" />
 
                     <com.google.android.material.textfield.TextInputLayout
