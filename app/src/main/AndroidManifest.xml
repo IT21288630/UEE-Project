@@ -8,8 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <!-- Permissions required by the App -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Permissions required by the App -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -23,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UEE"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.SearchCaregivers"
+            android:exported="false" />
         <activity
             android:name=".activities.LoadingScreenActivity"
             android:exported="true" >

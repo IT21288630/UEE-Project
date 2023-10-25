@@ -13,6 +13,7 @@ class FirstLoadingActivity : AppCompatActivity() {
 
         val signUPBtn = findViewById<Button>(R.id.btnSignUpIniti)
         val loginBtn = findViewById<Button>(R.id.btnLoginIniti)
+        val toSearch = findViewById<Button>(R.id.btnToSearch)
 
         signUPBtn.setOnClickListener(){
             val signupIntent = Intent(this, SignUpActivity::class.java)
@@ -21,6 +22,10 @@ class FirstLoadingActivity : AppCompatActivity() {
         loginBtn.setOnClickListener(){
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
+        }
+        toSearch.setOnClickListener(){
+            val toSearchIntent = Intent(this, SearchCaregivers::class.java)
+            startActivity(toSearchIntent)
         }
     }
 }
