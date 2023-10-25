@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 import com.example.uee.R
 import com.example.uee.adapters.clientCarouselAdapter
@@ -62,8 +64,12 @@ class ClientProfileFragment : Fragment() {
         val clientName = view.findViewById<TextView>(R.id.txtClientProName)
         val clientImage = view.findViewById<ImageView>(R.id.imgViewClientProPic)
 
-        clientName.text = clientData?.name?: "Anoonymous"
+        clientName.text = clientData?.name?: "TempUser"
 
+        Glide.with(this)
+            .load(clientData?.proPic)
+            .apply(RequestOptions.circleCropTransform())
+            .into(clientImage)
 
         val adapter = clientCarouselAdapter(list)
 

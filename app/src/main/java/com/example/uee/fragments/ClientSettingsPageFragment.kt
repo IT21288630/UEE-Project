@@ -7,11 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.uee.R
 import com.example.uee.activities.LoginActivity
+import com.example.uee.dataClasses.Client
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +31,7 @@ class ClientSettingsPageFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private var clientData: Client? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,13 +58,28 @@ class ClientSettingsPageFragment : Fragment() {
         val sharedPref = requireActivity().getSharedPreferences("appPref", AppCompatActivity.MODE_PRIVATE)
         val editor = sharedPref.edit()
 
+        clientData = requireArguments().getParcelable("clientData")
+
         val backNav = view.findViewById<TextView>(R.id.viewBackToProfile)
         val yourFav = view.findViewById<Button>(R.id.btnYourFavorites)
         val mypastHirings = view.findViewById<Button>(R.id.btnPastHirings)
         val rateCaregivers = view.findViewById<Button>(R.id.btnRateCareGivers)
         val settingsBtn = view.findViewById<Button>(R.id.btnSettings)
         val logoutBtn = view.findViewById<Button>(R.id.btnLogOut)
+        val userNameTxt = view.findViewById<TextView>(R.id.txtSettingUserName)
+        val userContact = view.findViewById<TextView>(R.id.txtSettingUserContactNo)
+        val userEmail = view.findViewById<TextView>(R.id.txtSettingUserEmail)
+        val userDP = view.findViewById<ImageView>(R.id.imgViewClientProPic)
 
+        userNameTxt.text = clientData?.userName
+        userContact.text = clientData?.contactNo
+        userEmail.text = clientData?.email
+
+
+        Glide.with(this)
+            .load(clientData?.proPic)
+            .apply(RequestOptions.circleCropTransform())
+            .into(userDP)
 
         backNav.setOnClickListener(){
             parentFragmentManager.popBackStack()
