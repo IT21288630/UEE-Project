@@ -1,6 +1,7 @@
 package com.example.uee.activities
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.uee.R
 import com.example.uee.adapters.careGiverListAdpater
 import com.example.uee.dataClasses.Caregiver
+import com.example.uee.fragments.ClientProfileFragment
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Locale
 
@@ -64,6 +66,16 @@ class SearchCaregivers : AppCompatActivity() {
             }
 
         })
+
+        val backToMainButton = findViewById<Button>(R.id.backtoMain)
+        backToMainButton.setOnClickListener {
+            // Start the ClientProfileFragment activity or fragment here
+            val intent = Intent(this, ClientProfileFragment::class.java)
+            startActivity(intent)
+        }
+
+
+
     }
 
     private fun loadCaregiversData() {

@@ -43,7 +43,9 @@
         android:id="@+id/searchRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
@@ -51,7 +53,7 @@
         android:id="@+id/backtoMain"
         android:layout_width="139dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="#03A9F4"
         android:text="Back"
         app:cornerRadius="10dp"
