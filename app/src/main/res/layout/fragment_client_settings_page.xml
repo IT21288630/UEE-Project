@@ -260,34 +260,39 @@
                 app:iconGravity="textStart"
                 app:iconPadding="30dp"
                 app:iconTint="@android:color/black" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:elevation="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogOut"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:text="logout "
+                android:textSize="24sp"
+                android:textColor="#FF0000"
+                app:icon="@drawable/ic_power_red"
+                app:iconGravity="textStart"
+                app:iconPadding="30dp"
+                android:backgroundTint="@color/white"
+                app:iconTint="#FF0000" />
+
         </LinearLayout>
 
+
+
+
     </ScrollView>
-    <View
-        android:id="@+id/divider7"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="?android:attr/listDivider"
-        android:elevation="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogOut"
-        android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="wrap_content"
-        android:text="logout "
-        android:textSize="24sp"
-        android:textColor="#FF0000"
-        app:icon="@drawable/ic_power_red"
-        app:iconGravity="textStart"
-        app:iconPadding="30dp"
-        android:backgroundTint="@color/white"
-        app:iconTint="#FF0000" />
 
 </LinearLayout>

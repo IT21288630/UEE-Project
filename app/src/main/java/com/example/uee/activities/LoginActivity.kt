@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.uee.R
 import com.example.uee.dataClasses.Caregiver
@@ -40,6 +41,12 @@ class LoginActivity : AppCompatActivity() {
         val etUName: TextInputLayout = findViewById(R.id.loginUserNameField)
         val etPassword: TextInputLayout = findViewById(R.id.loginPswField)
         val btnLogin: Button = findViewById(R.id.btnLogin)
+        val gotoSignUp : TextView = findViewById(R.id.textViewSignUp)
+
+        gotoSignUp.setOnClickListener(){
+            val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intent)
+        }
 
         btnLogin.setOnClickListener {
             /*@ToDo - search both Caregiver collection and Client collection. Get the type of matched collection. If matched with caregiver, load the caregiver UI, if matched with the client load client UI. Save user type in sharePref */
@@ -148,36 +155,28 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private suspend fun loginTheUser(validUser : LoginUser) {
+    private suspend fun loginTheUser(validUser: LoginUser) {
 
         val sharedPreferences = getSharedPreferences("appPref", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
         editor.putString("userName", validUser.userName)
         editor.putString("userType", validUser.userType)
-        editor.apply() //
-
-
+        editor.apply()
 
         if (validUser.userType == "client") {
-            CoroutineScope(Dispatchers.Main).launch {
-                val user = getClientObject(validUser)
-                val intent = Intent(this@LoginActivity, ClientUIActivity::class.java)
-                intent.putExtra("clientData", user)
-                startActivity(intent)
-            }
-        }else if(validUser.userType == "caregiver"){
-
-            CoroutineScope(Dispatchers.Main).launch {
-                val user = getCaregiverObject(validUser)
-                val intent = Intent(this@LoginActivity, CaregiverActivity::class.java)
-                intent.putExtra("caregiver", user)
-                startActivity(intent)
-            }
+            val user = getClientObject(validUser)
+            val intent = Intent(this@LoginActivity, ClientUIActivity::class.java)
+            intent.putExtra("clientData", user)
+            startActivity(intent)
+        } else if (validUser.userType == "caregiver") {
+            val user = getCaregiverObject(validUser)
+            val intent = Intent(this@LoginActivity, CaregiverActivity::class.java)
+            intent.putExtra("caregiver", user)
+            startActivity(intent)
         }
-
-
     }
+
 
 
     private suspend fun getClientObject(getUser: LoginUser): Client? = withContext(Dispatchers.IO) {
