@@ -155,7 +155,7 @@ class LoginActivity : AppCompatActivity() {
 
         editor.putString("userName", validUser.userName)
         editor.putString("userType", validUser.userType)
-        editor.apply() // Or editor.commit() for immediate save
+        editor.apply() //
 
 
 
