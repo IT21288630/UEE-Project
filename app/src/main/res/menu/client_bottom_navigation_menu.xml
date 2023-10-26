@@ -22,4 +22,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_settings"
         android:title="Settings"/>
+
+    <item
+        android:id="@+id/page_5"
+        android:enabled="true"
+        android:icon="@drawable/ic_search"
+        android:title="Search"/>
 </menu>
