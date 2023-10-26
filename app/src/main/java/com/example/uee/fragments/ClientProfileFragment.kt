@@ -30,7 +30,7 @@ class ClientProfileFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var clientData: Client? = null
-    private var clinetArgName : String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -59,8 +59,8 @@ class ClientProfileFragment : Fragment() {
 
         val list = ArrayList<clientCarouselDataModel>()
 
-        list.add(clientCarouselDataModel(R.drawable.locationbasedimg, "Location Based"))
         list.add(clientCarouselDataModel(R.drawable.topratedimg, "Top Rated"))
+        list.add(clientCarouselDataModel(R.drawable.locationbasedimg, "Near to you"))
         list.add(clientCarouselDataModel(R.drawable.favoritesimg, "My Favorites"))
 
         val clientName = view.findViewById<TextView>(R.id.txtClientProName)
@@ -89,11 +89,13 @@ class ClientProfileFragment : Fragment() {
 
                // Handle item click event here
                val selectedItem = list[position]
-               val selectedItemString = selectedItem.toString()
+               val selectedItemString = selectedItem.text
                // Create an intent
                val intent = Intent(requireContext(), FilteredCaregiverActivity::class.java)
 
                intent.putExtra("selectedItem", selectedItemString)
+               intent.putExtra("clientLocation", clientData?.location)
+
                startActivity(intent)
             }
         })
