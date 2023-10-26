@@ -36,7 +36,7 @@ class ClientUIActivity : AppCompatActivity() {
 
 
 
-        setCurrentFragment(ClientProfileFragment(), null)
+
 
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
