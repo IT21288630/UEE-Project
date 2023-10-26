@@ -107,7 +107,7 @@ class LoadingScreenActivity : AppCompatActivity() {
 
     private suspend fun getClientObject(getUser: LoginUser): Client? = withContext(Dispatchers.IO) {
         var clientObj: Client? = null
-        try {
+
             val querySnapshot = clientCollectionRef.get().await()
             for (document in querySnapshot) {
                 val temp = document.toObject<Client>()
@@ -115,17 +115,13 @@ class LoadingScreenActivity : AppCompatActivity() {
                     clientObj = temp
                 }
             }
-        } catch (e: Exception) {
-            withContext(Dispatchers.Main) {
-                Toast.makeText(this@LoadingScreenActivity, e.message, Toast.LENGTH_LONG).show()
-            }
-        }
+
         clientObj
     }
 
     private suspend fun getCaregiverObject(getUser: LoginUser): Caregiver? = withContext(Dispatchers.IO) {
         var caregiverObj: Caregiver? = null
-        try {
+
             val querySnapshot = caregiverCollectionRef.get().await()
             for (document in querySnapshot) {
                 val temp = document.toObject<Caregiver>()
@@ -133,11 +129,7 @@ class LoadingScreenActivity : AppCompatActivity() {
                     caregiverObj = temp
                 }
             }
-        } catch (e: Exception) {
-            withContext(Dispatchers.Main) {
-                Toast.makeText(this@LoadingScreenActivity, e.message, Toast.LENGTH_LONG).show()
-            }
-        }
+
         caregiverObj
     }
 

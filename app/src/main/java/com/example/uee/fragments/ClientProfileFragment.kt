@@ -35,7 +35,8 @@ class ClientProfileFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
 
-
+        // Access clientData here
+        clientData = requireArguments().getParcelable("clientData")
 
     }
 
@@ -49,9 +50,6 @@ class ClientProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Access clientData here
-        clientData = requireArguments().getParcelable("clientData")
 
 
 
